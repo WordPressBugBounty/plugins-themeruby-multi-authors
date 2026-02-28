@@ -1,0 +1,102 @@
+/**
+ * ThemeRuby Multi Authors - Frontend Styles
+ *
+ * Styles for the author box and other frontend elements.
+ *
+ * @package ThemeRuby_Multi_Authors
+ * @since   1.0.0
+ */
+
+/* ============================================================================
+   AUTHOR BOX
+   ========================================================================= */
+
+.tma-author-box {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+    width: 100%;
+    margin: 0 0 1.5em;
+    padding: 10px 20px;
+    border: 1px solid #8883;
+    border-radius: 5px;
+}
+
+.tma-author-box-title {
+    padding-bottom: 7px;
+    display: flex;
+    line-height: 1;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 1px solid #8883;
+}
+
+.tma-author-box-title svg {
+    width: 22px;
+}
+
+.tma-author-box-title span {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.tma-author-box-title h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.tma-author-box-authors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tma-author-box-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tma-author-avatar {
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.tma-author-avatar img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.tma-author-info {
+    flex: 1;
+}
+
+.tma-author-name {
+    margin: 0 0 5px 0;
+    font-size: max(13px, .8rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.tma-author-name a {
+    text-transform: capitalize;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.tma-author-bio {
+    font-size: min(.8rem, 13px);
+    line-height: 1.7;
+    opacity: .7;
+}
+
+.tma-author-bio p {
+    margin: 0 0 10px 0;
+}
+
+.tma-author-bio p:last-child {
+    margin-bottom: 0;
+}

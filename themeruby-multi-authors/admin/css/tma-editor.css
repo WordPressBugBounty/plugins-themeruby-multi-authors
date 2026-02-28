@@ -1,0 +1,312 @@
+/**
+ * ThemeRuby Multi Authors - Admin Styles
+ *
+ * WordPress-style tag interface for author selection.
+ *
+ * @package ThemeRuby_Multi_Authors
+ * @since 1.0.0
+ */
+
+/* Meta Box Container */
+.tmauthors-meta-box {
+    margin: 0;
+}
+
+.tmauthors-meta-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* Primary Author Section */
+.tmauthors-primary-author {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.tmauthors-primary-author .description {
+    margin: 4px 0 8px;
+    font-size: 13px;
+    color: #1d2327;
+}
+
+.tmauthors-primary-author .howto {
+    margin: 4px 0 0;
+    font-size: 12px;
+    font-style: italic;
+    color: #646970;
+}
+
+/* Co-Authors Wrapper */
+.tmauthors-coauthors-wrapper {
+    margin-top: 12px;
+}
+
+.tmauthors-coauthors-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* Selected Authors Display (WordPress Tag Style) */
+.tmauthors-selected-authors {
+    margin: 0 0 7px;
+    padding: 0;
+}
+
+/* Author Tag (WordPress Tag Style) */
+.tmauthors-author-tag {
+    display: inline-flex;
+    position: relative;
+    margin: 2px 4px 2px 0;
+    padding: 3px 8px 3px 24px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #2c3338;
+    background-color: #f0f0f1;
+    border-radius: 3px;
+    cursor: default;
+    white-space: nowrap;
+}
+
+/* Remove Button (WordPress Tag Style) */
+.tmauthors-author-tag .ntdelbutton {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: all 0.1s ease-in-out;
+}
+
+.tmauthors-author-tag .ntdelbutton:hover,
+.tmauthors-author-tag .ntdelbutton:focus {
+    color: #135e96;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.tmauthors-author-tag .ntdelbutton .remove-tag-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.tmauthors-author-tag .ntdelbutton .remove-tag-icon::before {
+    content: "\f335";
+    display: inline-block;
+    font: normal 16px/1 dashicons;
+    speak: never;
+    line-height: 18px;
+    width: 20px;
+    vertical-align: middle;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tmauthors-author-tag .screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* Search Input Wrapper */
+.tmauthors-search-wrapper {
+    position: relative;
+    margin-bottom: 8px;
+    z-index: 1;
+}
+
+/* Search Input (WordPress New Tag Style) */
+.tmauthors-search-input {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #2c3338;
+    background-color: #fff;
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    box-shadow: 0 0 0 transparent;
+    transition: border-color 0.1s ease-in-out, box-shadow 0.1s linear;
+}
+
+.tmauthors-search-input {
+    color: #646970;
+    min-height: 48px;
+}
+
+#tmauthors_search_input {
+    line-height: 40px;
+}
+
+/* Help Text */
+#tmauthors-search-desc {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.tmauthors-search-wrapper .howto {
+    margin: 6px 0 0;
+    font-size: 12px;
+    font-style: italic;
+    color: #646970;
+}
+
+/* Suggestions Dropdown */
+.tmauthors-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    max-height: 280px;
+    overflow-y: auto;
+    z-index: 999999;
+    margin-top: 2px;
+    display: none;
+}
+
+#tmauthors-suggestions.active {
+    display: block;
+}
+
+/* Suggestion Item */
+.tmauthors-suggestion-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 1px solid #f0f0f1;
+    font-size: 13px;
+    line-height: 1.5;
+    transition: background-color 0.05s ease-in-out;
+    color: #1d2327;
+    background-color: #fff;
+}
+
+.tmauthors-suggestion-item:hover,
+.tmauthors-suggestion-item.selected {
+    background-color: #f6f7f7 !important;
+}
+
+.tmauthors-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.tmauthors-suggestion-item strong {
+    display: block;
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.tmauthors-suggestion-item small {
+    color: #646970;
+}
+
+/* No Results Message */
+.tmauthors-no-results {
+    padding: 12px;
+    color: #646970;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Loading State */
+.tmauthors-loading {
+    padding: 12px;
+    text-align: center;
+    color: #646970;
+    font-size: 13px;
+}
+
+.tmauthors-loading .spinner {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin: 4px;
+}
+
+/* Admin Columns */
+.column-tmauthors {
+    width: 15%;
+}
+
+.column-tmauthors a {
+    text-decoration: none;
+    color: #2271b1;
+}
+
+.column-tmauthors a:hover {
+    text-decoration: underline;
+    color: #135e96;
+}
+
+/* Scrollbar Styling */
+.tmauthors-suggestions::-webkit-scrollbar {
+    width: 12px;
+}
+
+.tmauthors-suggestions::-webkit-scrollbar-track {
+    background: #f0f0f1;
+}
+
+.tmauthors-suggestions::-webkit-scrollbar-thumb {
+    background: #c3c4c7;
+    border-radius: 6px;
+}
+
+.tmauthors-suggestions::-webkit-scrollbar-thumb:hover {
+    background: #a7aaad;
+}
+
+/* Accessibility Improvements */
+.tmauthors-author-tag:focus-within {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+.tmauthors-suggestion-item:focus {
+    outline: 2px solid #2271b1;
+    outline-offset: -2px;
+}
+
+/* Animation for Tag Addition/Removal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tmauthors-author-tag {
+    animation: fadeIn 0.2s ease-in-out;
+}

@@ -1,0 +1,555 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Light Views Counter\n"
+"POT-Creation-Date: 2025-11-25 14:44+0700\n"
+"PO-Revision-Date: 2017-07-16 09:08+0700\n"
+"Last-Translator: \n"
+"Language-Team: ThemeRuby <support@themeruby.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _x;__;_e;_nx:1,2;esc_html__;esc_html_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/class-tma-admin.php:65 includes/class-tma-admin.php:66 includes/class-tma-admin.php:78
+#: includes/class-tma-admin.php:143
+msgid "ThemeRuby Multi Authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:77
+msgid "ThemeRuby Multi Authors Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:117
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/class-tma-admin.php:118
+msgid "Access Denied"
+msgstr ""
+
+#: includes/class-tma-admin.php:144
+msgid ""
+"High-performance, developer-friendly plugin to assign multiple authors to posts. Fully compatible with WP_Query, REST "
+"API, block editor, and standard loops."
+msgstr ""
+
+#: includes/class-tma-admin.php:148
+msgid "Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:152
+msgid "Usage"
+msgstr ""
+
+#: includes/class-tma-admin.php:161
+msgid "Post Type Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:168
+msgid "Supported Post Types"
+msgstr ""
+
+#: includes/class-tma-admin.php:169
+msgid "Select which post types support multiple authors."
+msgstr ""
+
+#: includes/class-tma-admin.php:227
+msgid "Author Page Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:233
+msgid "Include Additional Authors on Archive Pages"
+msgstr ""
+
+#: includes/class-tma-admin.php:234
+msgid ""
+"When enabled, author archive pages will display all posts where the user is either the primary author or an additional "
+"author. When disabled, only posts where the user is the primary author will be shown."
+msgstr ""
+
+#: includes/class-tma-admin.php:249
+msgid "WP_Query Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:253
+msgid ""
+"Allow ThemeRuby Multi Authors to integrate with WP_Query through filters. These settings enable you to display posts "
+"assigned to multiple authors in any theme or plugin."
+msgstr ""
+
+#: includes/class-tma-admin.php:259
+msgid "Author ID Parameter"
+msgstr ""
+
+#: includes/class-tma-admin.php:260
+msgid "Enable filtering in custom queries using \"author\" parameter. Example: new WP_Query(['author' => 5])"
+msgstr ""
+
+#: includes/class-tma-admin.php:274
+msgid "Author Name Parameter"
+msgstr ""
+
+#: includes/class-tma-admin.php:275
+msgid ""
+"Enable filtering in custom queries using \"author_name\" parameter. Example: new WP_Query(['author_name' => 'john'])"
+msgstr ""
+
+#: includes/class-tma-admin.php:289
+msgid "Author__in Parameter"
+msgstr ""
+
+#: includes/class-tma-admin.php:290
+msgid ""
+"Enable filtering in custom queries using \"author__in\" parameter. Example: new WP_Query(['author__in' => [5, 10, 15]])"
+msgstr ""
+
+#: includes/class-tma-admin.php:304
+msgid "Author__not_in Parameter"
+msgstr ""
+
+#: includes/class-tma-admin.php:305
+msgid ""
+"Enable filtering in custom queries using \"author__not_in\" parameter. Example: new WP_Query(['author__not_in' => [5, "
+"10]])"
+msgstr ""
+
+#: includes/class-tma-admin.php:320
+msgid "SEO Integration"
+msgstr ""
+
+#: includes/class-tma-admin.php:327
+msgid "Enable SEO Integration"
+msgstr ""
+
+#: includes/class-tma-admin.php:328
+msgid "Automatically integrate with SEO plugins for proper multi-author schema markup."
+msgstr ""
+
+#: includes/class-tma-admin.php:343
+msgid "Display Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:350
+msgid "Show Author Box"
+msgstr ""
+
+#: includes/class-tma-admin.php:351
+msgid "Automatically display an author box at the end of posts showing all authors with their avatars, names, and bios."
+msgstr ""
+
+#: includes/class-tma-admin.php:366
+msgid "Performance Settings"
+msgstr ""
+
+#: includes/class-tma-admin.php:373
+msgid "Load CSS in Header"
+msgstr ""
+
+#: includes/class-tma-admin.php:374
+msgid ""
+"Load shortcodes CSS in the header to prevent flash of unstyled content. Disable to load in footer for slightly better "
+"page load performance."
+msgstr ""
+
+#: includes/class-tma-admin.php:388
+msgid "Enable Author Data Caching"
+msgstr ""
+
+#: includes/class-tma-admin.php:389
+msgid "Cache author data using object cache to reduce database queries."
+msgstr ""
+
+#: includes/class-tma-admin.php:403
+msgid "Clear Author Cache"
+msgstr ""
+
+#: includes/class-tma-admin.php:404
+msgid "Manually clear all cached author data. Use this if you notice stale author information."
+msgstr ""
+
+#: includes/class-tma-admin.php:410
+msgid "Clear All Author Cache"
+msgstr ""
+
+#: includes/class-tma-admin.php:423
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/class-tma-admin.php:424
+msgid "Use these shortcodes anywhere: in post content, widgets, page builders, etc."
+msgstr ""
+
+#: includes/class-tma-admin.php:431
+msgid "Simple Author List"
+msgstr ""
+
+#: includes/class-tma-admin.php:435
+msgid "Display author names as a simple list with links."
+msgstr ""
+
+#: includes/class-tma-admin.php:438 includes/class-tma-admin.php:473 includes/class-tma-admin.php:507
+#: includes/class-tma-admin.php:541 includes/class-tma-admin.php:574
+msgid "Examples:"
+msgstr ""
+
+#: includes/class-tma-admin.php:441
+msgid "Output: John Doe, Jane Smith"
+msgstr ""
+
+#: includes/class-tma-admin.php:445
+msgid "Output: John Doe & Jane Smith"
+msgstr ""
+
+#: includes/class-tma-admin.php:449
+msgid "Output: By John Doe, Jane Smith"
+msgstr ""
+
+#: includes/class-tma-admin.php:453 includes/class-tma-admin.php:488 includes/class-tma-admin.php:522
+#: includes/class-tma-admin.php:556 includes/class-tma-admin.php:589
+msgid "Parameters:"
+msgstr ""
+
+#: includes/class-tma-admin.php:466
+msgid "Complete Author Box"
+msgstr ""
+
+#: includes/class-tma-admin.php:470
+msgid "Display a complete author box with avatars, names, bios, and links."
+msgstr ""
+
+#: includes/class-tma-admin.php:476
+msgid "Full author box with avatars and bios"
+msgstr ""
+
+#: includes/class-tma-admin.php:480
+msgid "Author box without biographies"
+msgstr ""
+
+#: includes/class-tma-admin.php:484
+msgid "Smaller avatar display"
+msgstr ""
+
+#: includes/class-tma-admin.php:500
+msgid "Author List (Bullets)"
+msgstr ""
+
+#: includes/class-tma-admin.php:504
+msgid "Display authors as an unordered list with optional avatars and post counts."
+msgstr ""
+
+#: includes/class-tma-admin.php:510
+msgid "Simple bulleted list"
+msgstr ""
+
+#: includes/class-tma-admin.php:514
+msgid "List with avatars"
+msgstr ""
+
+#: includes/class-tma-admin.php:518
+msgid "List with post counts"
+msgstr ""
+
+#: includes/class-tma-admin.php:534
+msgid "Author Avatars Only"
+msgstr ""
+
+#: includes/class-tma-admin.php:538
+msgid "Display only author profile pictures in a row."
+msgstr ""
+
+#: includes/class-tma-admin.php:544
+msgid "Row of linked avatars"
+msgstr ""
+
+#: includes/class-tma-admin.php:548
+msgid "Larger avatars"
+msgstr ""
+
+#: includes/class-tma-admin.php:552
+msgid "Avatars without links"
+msgstr ""
+
+#: includes/class-tma-admin.php:567
+msgid "Author Count"
+msgstr ""
+
+#: includes/class-tma-admin.php:571
+msgid "Display the number of authors for a post."
+msgstr ""
+
+#: includes/class-tma-admin.php:577
+msgid "Output: 3 authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:581
+msgid "Output: Written by 3 people"
+msgstr ""
+
+#: includes/class-tma-admin.php:585
+msgid "Output: 3 co-authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:598
+msgid "📌 Where to Use Shortcodes"
+msgstr ""
+
+#: includes/class-tma-admin.php:600
+msgid "Post/Page Content"
+msgstr ""
+
+#: includes/class-tma-admin.php:600
+msgid "Add directly in Block or Classic Editor"
+msgstr ""
+
+#: includes/class-tma-admin.php:601
+msgid "Widgets"
+msgstr ""
+
+#: includes/class-tma-admin.php:601
+msgid "Use in Text or HTML widgets (Appearance > Widgets)"
+msgstr ""
+
+#: includes/class-tma-admin.php:602
+msgid "Page Builders"
+msgstr ""
+
+#: includes/class-tma-admin.php:602
+msgid "Works with popular page builders."
+msgstr ""
+
+#: includes/class-tma-admin.php:603
+msgid "Theme Templates"
+msgstr ""
+
+#: includes/class-tma-admin.php:603
+msgid "Use do_shortcode() in PHP files"
+msgstr ""
+
+#: includes/class-tma-admin.php:608
+msgid "💡 Common Use Cases"
+msgstr ""
+
+#: includes/class-tma-admin.php:610
+msgid "Article Byline:"
+msgstr ""
+
+#: includes/class-tma-admin.php:614
+msgid "Sidebar Widget:"
+msgstr ""
+
+#: includes/class-tma-admin.php:618
+msgid "Footer Credits:"
+msgstr ""
+
+#: includes/class-tma-admin.php:628
+msgid "Template Tags (For Developers)"
+msgstr ""
+
+#: includes/class-tma-admin.php:629
+msgid "Use these PHP functions for custom integration."
+msgstr ""
+
+#: includes/class-tma-admin.php:633
+msgid "Display Authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:635
+msgid "Display linked author names for the current post."
+msgstr ""
+
+#: includes/class-tma-admin.php:638
+msgid "Display Author Box"
+msgstr ""
+
+#: includes/class-tma-admin.php:640
+msgid "Display a formatted author box with avatars, names, and bios."
+msgstr ""
+
+#: includes/class-tma-admin.php:643
+msgid "Get Author Names"
+msgstr ""
+
+#: includes/class-tma-admin.php:645
+msgid "Get author names as a string, separated by commas."
+msgstr ""
+
+#: includes/class-tma-admin.php:648
+msgid "Get Post Authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:650
+msgid "Get an array of WP_User objects for all authors of the current post."
+msgstr ""
+
+#: includes/class-tma-admin.php:653
+msgid "Check if Post Has Multiple Authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:655
+msgid "Check if the current post has more than one author."
+msgstr ""
+
+#: includes/class-tma-admin.php:661
+msgid "Query Examples"
+msgstr ""
+
+#: includes/class-tma-admin.php:665
+msgid "Query by Author ID"
+msgstr ""
+
+#: includes/class-tma-admin.php:672
+msgid "Get all posts where user ID 5 is the primary or additional author."
+msgstr ""
+
+#: includes/class-tma-admin.php:675
+msgid "Query by Multiple Authors"
+msgstr ""
+
+#: includes/class-tma-admin.php:682
+msgid "Get all posts by multiple authors."
+msgstr ""
+
+#: includes/class-tma-admin.php:740 includes/class-tma-admin.php:800 includes/class-tma-admin.php:856
+msgid "Permission denied."
+msgstr ""
+
+#: includes/class-tma-admin.php:761
+msgid "Invalid setting name."
+msgstr ""
+
+#: includes/class-tma-admin.php:771
+msgid "Setting saved successfully."
+msgstr ""
+
+#: includes/class-tma-admin.php:773
+msgid "Failed to save setting."
+msgstr ""
+
+#: includes/class-tma-admin.php:814
+msgid "Post types saved successfully."
+msgstr ""
+
+#: includes/class-tma-admin.php:816
+msgid "Failed to save post types."
+msgstr ""
+
+#: includes/class-tma-admin.php:861
+msgid "All author cache cleared successfully."
+msgstr ""
+
+#: includes/class-tma-capabilities.php:114 includes/class-tma-meta-box.php:82
+msgid "You do not have permission to assign authors."
+msgstr ""
+
+#: includes/class-tma-capabilities.php:125
+#, php-format
+msgid "User %d cannot be assigned as an author."
+msgstr ""
+
+#: includes/class-tma-meta-box.php:48
+msgid "RubyAuthors"
+msgstr ""
+
+#: includes/class-tma-meta-box.php:112
+msgid "Additional Authors"
+msgstr ""
+
+#: includes/class-tma-meta-box.php:116
+msgid "Search to add additional co-authors to this post."
+msgstr ""
+
+#: includes/class-tma-meta-box.php:124 includes/class-tma-meta-box.php:345
+msgid "Remove"
+msgstr ""
+
+#: includes/class-tma-meta-box.php:137
+msgid "Search authors..."
+msgstr ""
+
+#: includes/class-tma-meta-box.php:344
+msgid "No authors found"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:54 includes/class-tma-taxonomy.php:67
+msgid "Authors"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:55
+msgid "Author"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:56
+msgid "Search Authors"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:57
+msgid "Popular Authors"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:58
+msgid "All Authors"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:59
+msgid "Edit Author"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:60
+msgid "Update Author"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:61
+msgid "Add New Author"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:62
+msgid "New Author Name"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:63
+msgid "Separate authors with commas"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:64
+msgid "Add or remove authors"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:65
+msgid "Choose from the most used authors"
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:66
+msgid "No authors found."
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:121
+msgid "Invalid user ID."
+msgstr ""
+
+#: includes/class-tma-taxonomy.php:303
+msgid "ThemeRuby Multi Authors: Taxonomy registration failed. Please deactivate and reactivate the plugin."
+msgstr ""
+
+#: includes/template-tags.php:176
+msgid "Post must have at least one author."
+msgstr ""
+
+#: themeruby-multi-authors.php:220
+msgid "ThemeRuby Multi Authors requires PHP 7.4 or higher."
+msgstr ""
+
+#: themeruby-multi-authors.php:221 themeruby-multi-authors.php:232
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: themeruby-multi-authors.php:231
+msgid "ThemeRuby Multi Authors requires version 5.8 or higher."
+msgstr ""

@@ -1,0 +1,807 @@
+/**
+ * ThemeRuby Multi Authors - Admin Styles
+ *
+ * Modern admin interface styling following Light Views Counter design pattern.
+ *
+ * @package ThemeRuby_Multi_Authors
+ * @since   1.0.0
+ */
+
+/* ============================================================================
+   ADMIN CONTAINER
+   ========================================================================= */
+
+.tma-admin-wrap {
+    max-width: 1420px;
+    margin: 30px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.tma-admin-header {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.tma-admin-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.tma-admin-header p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* ============================================================================
+   SETTINGS SECTIONS
+   ========================================================================= */
+
+.tma-settings-section {
+    background: #fff;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.tma-section-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9fafb;
+}
+
+.tma-section-header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e1e1e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tma-section-body {
+    padding: 0;
+}
+
+.tma-section-description {
+    padding: 20px 30px;
+    background: #fffbf0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tma-section-description p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   SETTING ROWS
+   ========================================================================= */
+
+.tma-setting-row {
+    padding: 20px 30px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+.tma-setting-row:last-child {
+    border-bottom: none;
+}
+
+.tma-setting-row:hover {
+    background: #f9fafb;
+}
+
+.tma-setting-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tma-setting-label label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e1e1e;
+    margin: 0;
+    cursor: pointer;
+}
+
+.tma-setting-label .description {
+    display: block;
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.tma-setting-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 200px;
+    justify-content: flex-end;
+}
+
+/* ============================================================================
+   FORM CONTROLS
+   ========================================================================= */
+
+.tma-setting-input {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1e1e1e;
+    background: #fff;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.tma-setting-input:focus {
+    outline: none;
+    border-color: #42b978;
+    box-shadow: 0 0 0 3px rgba(66, 185, 120, 0.1);
+}
+
+/* ============================================================================
+   TOGGLE SWITCH
+   ========================================================================= */
+
+.tma-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.tma-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tma-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.3s;
+    border-radius: 26px;
+}
+
+.tma-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tma-toggle-switch input:checked + .tma-toggle-slider {
+    background-color: #42b978;
+}
+
+.tma-toggle-switch input:checked + .tma-toggle-slider:before {
+    transform: translateX(22px);
+}
+
+.tma-toggle-switch input:focus + .tma-toggle-slider {
+    box-shadow: 0 0 0 3px rgba(66, 185, 120, 0.1);
+}
+
+/* ============================================================================
+   TOAST NOTIFICATIONS
+   ========================================================================= */
+
+.tma-toast-container {
+    position: fixed;
+    top: 52px;
+    right: 20px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.tma-toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 250px;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+}
+
+.tma-toast.tma-toast-show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.tma-toast-saving {
+    background: #eff6ff;
+    color: #42b978;
+    border-left: 4px solid #42b978;
+}
+
+.tma-toast-success {
+    background: #ecfdf5;
+    color: #059669;
+    border-left: 4px solid #059669;
+}
+
+.tma-toast-error {
+    background: #fef2f2;
+    color: #dc2626;
+    border-left: 4px solid #dc2626;
+}
+
+.tma-toast .dashicons {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.tma-toast-message {
+    flex: 1;
+    line-height: 1.4;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+/* ============================================================================
+   TAB NAVIGATION
+   ========================================================================= */
+
+.tma-tab-navigation {
+    display: flex;
+    gap: 8px;
+}
+
+.tma-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #374151;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tma-tab-btn:hover {
+    border-color: #42b978;
+    color: #42b978;
+    background: #f9fafb;
+}
+
+.tma-tab-btn.active {
+    background: #42b978;
+    color: #fff;
+    border-color: #42b978;
+}
+
+.tma-tab-btn .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}
+
+/* ============================================================================
+   TAB CONTENT
+   ========================================================================= */
+
+.tma-tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tma-tab-content.active {
+    display: block;
+    animation: emaFadeIn 0.3s ease-in-out forwards;
+}
+
+.tma-admin-wrap #tma-tab-settings {
+    display: block;
+    opacity: 1;
+}
+
+.tma-admin-wrap .tma-tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.tma-admin-wrap #tma-tab-settings:not(.active) {
+    display: none;
+    opacity: 0;
+}
+
+@keyframes emaFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================================
+   POST TYPE TAG SELECTION
+   ========================================================================= */
+
+.tma-post-types-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.tma-post-type-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 20px;
+    background: #fff;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.tma-post-type-tag:hover {
+    border-color: #42b978;
+    background: #42b978;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(66, 185, 120, 0.15);
+}
+
+.tma-post-type-tag.active {
+    background: linear-gradient(135deg, #42b978 0%, #2d8a5f 100%);
+    border-color: #2d8a5f;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(66, 185, 120, 0.3);
+}
+
+.tma-post-type-tag.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(66, 185, 120, 0.4);
+}
+
+.tma-post-type-tag input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tma-post-type-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tma-post-type-tag.active .tma-post-type-label:before {
+    content: "✓";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* ============================================================================
+   ACTION BUTTONS
+   ========================================================================= */
+
+.tma-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.tma-action-btn.primary {
+    background: #42b978;
+    color: #fff;
+}
+
+.tma-action-btn.primary:hover {
+    background: #5a67d8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tma-action-btn.secondary {
+    background: #f3f4f6;
+    color: #1e1e1e;
+}
+
+.tma-action-btn.secondary:hover {
+    background: #e5e7eb;
+}
+
+.tma-action-btn.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.tma-action-btn.danger:hover {
+    background: #fecaca;
+}
+
+.tma-action-btn:disabled,
+.tma-action-btn.loading {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.tma-action-btn .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}
+
+/* ============================================================================
+   CODE EXAMPLES (USAGE TAB)
+   ========================================================================= */
+
+.tma-code-example {
+    padding: 20px 30px;
+    border-radius: 6px;
+}
+
+.tma-code-example:last-child {
+    margin-bottom: 0;
+}
+
+.tma-code-example h4 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.tma-code-example code {
+    display: block;
+    padding: 15px;
+    background: #8881;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    overflow-x: auto;
+}
+
+.tma-code-example p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 782px) {
+    .tma-tab-navigation {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .tma-tab-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .tma-tab-btn .dashicons {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+    }
+
+    .tma-setting-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .tma-setting-control {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .tma-post-types-container {
+        gap: 8px;
+    }
+
+    .tma-post-type-tag {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .tma-toast-container {
+        top: 46px;
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tma-toast-container {
+        left: 10px;
+        right: 10px;
+    }
+
+    .tma-toast {
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+/* ==========================================================================
+   Shortcodes Section Styles
+   ========================================================================== */
+
+.tma-section-intro {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 0 0;
+    font-weight: 400;
+}
+
+.tma-shortcodes-grid {
+    display: flex;
+    padding: 20px 30px;
+    flex-flow: column nowrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tma-shortcode-card {
+    background: #fff;
+    border: 1px solid #8883;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tma-shortcode-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.tma-shortcode-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.tma-shortcode-badge {
+    background: #c0ffbf;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.tma-shortcode-description {
+    margin-bottom: 15px;
+}
+
+.tma-shortcode-description p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tma-shortcode-examples {
+    margin-bottom: 15px;
+}
+
+.tma-shortcode-examples > strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #1d2327;
+}
+
+.tma-code-example.mini {
+    background: #8881;
+    border-left: 3px solid #37b122;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}
+
+.tma-code-example.mini code {
+    display: block;
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #1d2327;
+    border: 1px solid #8883;
+    font-family: 'Courier New', monospace;
+}
+
+.tma-output {
+    display: block;
+    color: #50575e;
+    font-size: 12px;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.tma-shortcode-params {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+}
+
+.tma-shortcode-params > strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #1d2327;
+}
+
+.tma-shortcode-params ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tma-shortcode-params li {
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #50575e;
+    line-height: 1.6;
+}
+
+.tma-shortcode-params li code {
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #d63638;
+    border: 1px solid #8883;
+    font-family: 'Courier New', monospace;
+}
+
+/* Usage Tips and Examples */
+.tma-usage-tip,
+.tma-usage-examples {
+    border: 1px solid #8883;
+    border-left: 4px solid #37b122;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.tma-usage-tip h4,
+.tma-usage-examples h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1d2327;
+    font-size: 15px;
+}
+
+.tma-usage-tip ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tma-usage-tip li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.tma-use-case {
+    background: #fff;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #c3e6ff;
+}
+
+.tma-use-case:last-child {
+    margin-bottom: 0;
+}
+
+.tma-use-case strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #1d2327;
+    font-size: 13px;
+}
+
+.tma-use-case code {
+    display: block;
+    background: #f6f7f7;
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #1d2327;
+    border: 1px solid #8883;
+    font-family: 'Courier New', monospace;
+}
