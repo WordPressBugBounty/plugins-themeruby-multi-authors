@@ -44,6 +44,13 @@ class TMAuthors_Query {
 	private static $max_queries_tracked = 50;
 
 	/**
+	 * Cache for post authors to avoid redundant queries
+	 *
+	 * @var array
+	 */
+	private static $authors_cache = [];
+
+	/**
 	 * Initialize hooks
 	 *
 	 * @since 1.0.0
@@ -60,6 +67,9 @@ class TMAuthors_Query {
 
 		// Cleanup after query is done
 		add_action( 'the_posts', [ __CLASS__, 'cleanup_query' ], 10, 2 );
+
+		// Clear authors cache when post terms are updated
+		add_action( 'set_object_terms', [ __CLASS__, 'clear_post_cache' ], 10, 4 );
 	}
 
 	/**
@@ -255,8 +265,8 @@ class TMAuthors_Query {
 		// Add LEFT JOIN to term_relationships and term_taxonomy
 		// Note: We don't need the terms table since we use term_id directly
 		$taxonomy = esc_sql( TMAuthors_Taxonomy::TAXONOMY );
-		$join     .= " LEFT JOIN {$wpdb->term_relationships} AS tmauthors_tr ON ({$wpdb->posts}.ID = tmauthors_tr.object_id)";
-		$join     .= " LEFT JOIN {$wpdb->term_taxonomy} AS tmauthors_tt ON (tmauthors_tr.term_taxonomy_id = tmauthors_tt.term_taxonomy_id AND tmauthors_tt.taxonomy = '{$taxonomy}')";
+		$join    .= " LEFT JOIN {$wpdb->term_relationships} AS tmauthors_tr ON ({$wpdb->posts}.ID = tmauthors_tr.object_id)";
+		$join    .= " LEFT JOIN {$wpdb->term_taxonomy} AS tmauthors_tt ON (tmauthors_tr.term_taxonomy_id = tmauthors_tt.term_taxonomy_id AND tmauthors_tt.taxonomy = '{$taxonomy}')";
 
 		return $join;
 	}
@@ -382,7 +392,7 @@ class TMAuthors_Query {
 		// Fallback: add condition if pattern not found
 		if ( ! empty( $term_ids ) ) {
 			$term_ids_str = implode( ',', $term_ids );
-			$where        .= " AND ({$wpdb->posts}.post_author IN ({$author_ids_str}) OR tmauthors_tt.term_id IN ({$term_ids_str}))";
+			$where       .= " AND ({$wpdb->posts}.post_author IN ({$author_ids_str}) OR tmauthors_tt.term_id IN ({$term_ids_str}))";
 		} else {
 			$where .= " AND ({$wpdb->posts}.post_author IN ({$author_ids_str}))";
 		}
@@ -428,7 +438,7 @@ class TMAuthors_Query {
 		// Fallback: add condition if pattern not found
 		if ( ! empty( $term_ids ) ) {
 			$term_ids_str = implode( ',', $term_ids );
-			$where        .= " AND ({$wpdb->posts}.post_author NOT IN ({$author_ids_str}) AND (tmauthors_tt.term_id IS NULL OR tmauthors_tt.term_id NOT IN ({$term_ids_str})))";
+			$where       .= " AND ({$wpdb->posts}.post_author NOT IN ({$author_ids_str}) AND (tmauthors_tt.term_id IS NULL OR tmauthors_tt.term_id NOT IN ({$term_ids_str})))";
 		} else {
 			$where .= " AND ({$wpdb->posts}.post_author NOT IN ({$author_ids_str}))";
 		}
@@ -473,6 +483,28 @@ class TMAuthors_Query {
 		}
 
 		return $posts;
+	}
+
+	/**
+	 * Clear post authors cache when terms are updated
+	 *
+	 * @param int    $object_id  Object ID.
+	 * @param array  $terms      Array of term IDs.
+	 * @param array  $tt_ids     Array of term taxonomy IDs.
+	 * @param string $taxonomy   Taxonomy slug.
+	 *
+	 * @since 1.3.0
+	 */
+	public static function clear_post_cache( $object_id, $terms, $tt_ids, $taxonomy ) {
+		// Only clear cache for our taxonomy
+		if ( TMAuthors_Taxonomy::TAXONOMY !== $taxonomy ) {
+			return;
+		}
+
+		$post_id = absint( $object_id );
+		if ( isset( self::$authors_cache[ $post_id ] ) ) {
+			unset( self::$authors_cache[ $post_id ] );
+		}
 	}
 
 	/**
@@ -591,6 +623,7 @@ class TMAuthors_Query {
 	 * Get all authors for a post
 	 *
 	 * Returns all authors for a post, including the primary author and additional authors.
+	 * Results are cached to avoid redundant database queries.
 	 *
 	 * @param int $post_id Post ID.
 	 *
@@ -598,6 +631,13 @@ class TMAuthors_Query {
 	 * @since 1.0.0
 	 */
 	public static function get_post_authors( $post_id ) {
+		$post_id = absint( $post_id );
+
+		// Check static cache first
+		if ( isset( self::$authors_cache[ $post_id ] ) ) {
+			return self::$authors_cache[ $post_id ];
+		}
+
 		$authors = [];
 
 		// Get terms from taxonomy
@@ -613,19 +653,39 @@ class TMAuthors_Query {
 				}
 			}
 
+			// Cache and return
+			self::$authors_cache[ $post_id ] = $authors;
 			return $authors;
 		}
 
-		// Get user objects for each term
+		// Collect user IDs for batch fetching
+		$user_ids = [];
 		foreach ( $terms as $term ) {
 			$user_id = TMAuthors_Taxonomy::get_term_user_id( $term );
 			if ( $user_id ) {
-				$user = get_user_by( 'id', $user_id );
-				if ( $user ) {
-					$authors[] = $user;
-				}
+				$user_ids[] = $user_id;
 			}
 		}
+
+		// Batch fetch users with single query
+		if ( ! empty( $user_ids ) ) {
+			$users = get_users(
+				[
+					'include' => $user_ids,
+					'orderby' => 'include', // Preserve term order
+				]
+			);
+
+			foreach ( $users as $user ) {
+				$authors[] = $user;
+			}
+		}
+
+		// Cache result (limit cache size to prevent memory issues)
+		if ( 100 <= count( self::$authors_cache ) ) {
+			self::$authors_cache = array_slice( self::$authors_cache, -50, 50, true );
+		}
+		self::$authors_cache[ $post_id ] = $authors;
 
 		return $authors;
 	}

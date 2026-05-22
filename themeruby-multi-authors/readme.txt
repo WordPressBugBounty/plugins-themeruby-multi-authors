@@ -2,9 +2,9 @@
 Contributors: themeruby
 Tags: multiple authors, co-authors, guest authors, team, byline
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -153,6 +153,12 @@ Yes! See "For Developers" section above for full list of functions, hooks, and f
 Deactivation: Multi-author data preserved. Deletion: All plugin data removed, original post_author field preserved.
 
 == Changelog ==
+
+= 1.3.0 =
+
+* Improved: Static caching for post authors to reduce redundant queries
+* Improved: Batch user fetching in get_post_authors() for better performance
+* Compatibility: Tested with WordPress 7.0
 
 = 1.2.0 =
 * Fixed: Multi-author meta box only appeared on Posts, ignoring custom post type settings.

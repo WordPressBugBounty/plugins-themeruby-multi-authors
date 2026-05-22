@@ -8,7 +8,7 @@
  * Author:            ThemeRuby
  * License:           GPLv3
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
- * Version:           1.2.0
+ * Version:           1.3.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author URI:        https://themeruby.com/
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TMAUTHORS_VERSION', '1.2.0' );
+define( 'TMAUTHORS_VERSION', '1.3.0' );
 define( 'TMAUTHORS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TMAUTHORS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'TMAUTHORS_PLUGIN_FILE', __FILE__ );
@@ -204,7 +204,7 @@ final class ThemeRuby_Multi_Authors {
 
 		// Set activation flag.
 		update_option( 'tmauthors_version', TMAUTHORS_VERSION );
-		update_option( 'tmauthors_activated', current_time( 'timestamp' ) );
+		update_option( 'tmauthors_activated', time() );
 	}
 
 	/**
